@@ -1,10 +1,6 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+  <div id="app" class="min-vh-100">
+    <router-view class="min-vh-100 containerPost" />
   </div>
 </template>
 
@@ -28,5 +24,11 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.containerPost {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>
