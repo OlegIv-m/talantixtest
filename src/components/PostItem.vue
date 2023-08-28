@@ -14,7 +14,6 @@ export default defineComponent({
   name: "PostItem",
   props: {
     title: String,
-    id: Number,
     body: String,
     userName: String,
   },

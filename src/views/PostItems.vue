@@ -5,11 +5,9 @@
       <div class="postsContainer">
         <template v-for="col in currentData">
           <PostItem
-            v-if="col"
             :title="col.title"
             :body="col.body"
             :userName="col.userName"
-            :id="col.id"
             :key="col.id"
           />
         </template>
@@ -51,9 +49,6 @@ export default defineComponent({
     this.$store.dispatch("getPosts");
   },
   computed: {
-    rows() {
-      return this.posts;
-    },
     posts(): Post[] {
       return this.$store.getters.filteredPosts;
     },
@@ -63,14 +58,6 @@ export default defineComponent({
         (this.currentPage - 1) * this.perPage,
         this.currentPage * this.perPage
       );
-    },
-  },
-  methods: {
-    getIndex(group: number, col: number) {
-      return (group - 1) * 3 + col - 1;
-    },
-    hasMargin(group: number) {
-      return group === 2 ? "mt-3" : "";
     },
   },
 });
